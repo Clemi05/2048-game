@@ -37,6 +37,8 @@ body {
 .square {
   --x: 1;
   --y: 2;
+  --background-lightness: 20%;
+  --text-lightness: 5%;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -50,5 +52,5 @@ body {
   left: calc(var(--x) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap));
   font-weight: bold;
   background-color: hsl(200, 50%, var(--background-lightness));
-  color: hsl(200, 50%, var(--background-lightness));
+  color: hsl(200, 25%, var(--text-lightness));
 }
