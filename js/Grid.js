@@ -50,8 +50,8 @@ class Cell {
   set tile(value) {
     this.#tile = value;
     if (value == null) return
-    this.#tile.x = this.x;
-    this.#tile.y = this.y;
+    this.#tile.x = this.#x;
+    this.#tile.y = this.#y;
   }
 }
 

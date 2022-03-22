@@ -31,10 +31,6 @@ body {
 }
 
 .tile {
-  --x: 1;
-  --y: 2;
-  --background-lightness: 80%;
-  --text-lightness: 20%;
   position: absolute;
   display: flex;
   justify-content: center;
