@@ -14,10 +14,6 @@ body {
 }
 
 #game-board {
-  /* Sizes variables */
-  --grid-size: 4;
-  --cell-size: 20vmin;
-  --cell-gap: 2vmin;
   --cell-radius: 1vmin;
   display: grid;
   grid-template-columns: repeat(var(--grid-size), var(--cell-size));
@@ -35,10 +31,10 @@ body {
 }
 
 .square {
-  /* --x: 1;
+  --x: 1;
   --y: 2;
   --background-lightness: 80%;
-  --text-lightness: 20%; */
+  --text-lightness: 20%;
   position: absolute;
   display: flex;
   justify-content: center;
