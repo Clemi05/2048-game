@@ -30,7 +30,7 @@ body {
   border-radius: var(--cell-radius);
 }
 
-.square {
+.tile {
   --x: 1;
   --y: 2;
   --background-lightness: 80%;
@@ -43,7 +43,7 @@ body {
   height: var(--cell-size);
   background-color: orange;
   border-radius: var(--cell-radius);
-  /* Calculation cell-size and cell-gap and multiply it by the position and add another cell-gap for the border */
+  /* Calculate => cell-size and cell-gap and multiply it by the position and add another cell-gap for the border */
   top: calc(var(--y) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap));
   left: calc(var(--x) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap));
   font-weight: bold;
