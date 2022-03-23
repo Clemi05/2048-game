@@ -69,6 +69,7 @@ class Cell {
     this.#tile.x = this.#x;
     this.#tile.y = this.#y;
   }
+
 }
 
 function createCellElements(gridElement) {
