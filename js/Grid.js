@@ -103,7 +103,7 @@ class Cell {
   mergeTiles() {
     if (this.tile == null || this.mergeTile == null) return
     this.tile.value = this.tile.value + this.mergeTile.value;
-    this.mergeTile.remove();
+    this.mergeTile.remove(); /* remove mergeTile from the DOM */
     this.mergeTile = null; /* set mergeTile to null in the code */
   }
 }
