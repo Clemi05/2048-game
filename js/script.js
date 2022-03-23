@@ -55,7 +55,8 @@ async function handleInput(event) {
 
   if (!canMoveUp() && !canMoveDown() && !canMoveLeft() && !canMoveRight()) {
     newTile.waitForTransition(true).then(() => {
-      alert("Game Over! You lose.")
+      confirm("Game Over! You lose.");
+      window.location = '/'
     })
     return
   }
