@@ -8,6 +8,7 @@ const grid = new Grid(gameBoard);
 grid.randomEmptyCell().tile = new Tile(gameBoard);
 grid.randomEmptyCell().tile = new Tile(gameBoard);
 setupInput();
+console.log(grid.cellsByColumn);
 
 function setupInput() {
   window.addEventListener("keydown", handleInput, { once: true })
@@ -36,4 +37,9 @@ function handleInput(event) {
 
 
   setupInput();
+}
+
+
+function moveUp() {
+  slideTiles(grid.cellsByColumn)
 }
