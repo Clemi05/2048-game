@@ -17,7 +17,7 @@ Simple 2048 game in JavaScript.
 
 ### Links
 
-- Live Site URL: [Click here to see live site](https://clemi05.github.io/2048-game/)
+- Live Site URL: [Click here to see live site]()
 - Repository URL: [Click here to see repository](https://github.com/Clemi05/2048-game)
 
 ## My process
