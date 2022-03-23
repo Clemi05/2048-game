@@ -42,14 +42,29 @@ function moveUp() {
   return slideTiles(grid.cellsByColumn)
 }
 
+function moveDown() {
+  return slideTiles(grid.cellsByColumn.map(column => [...column].reverse()))
+}
+
+function moveLeft() {
+  return slideTiles(grid.cellsByColumn)
+}
+
+function moveRight() {
+  return slideTiles(grid.cellsByColumn)
+}
+
+
 function slideTiles(cells) {
   cells.forEach(group => {
     for (let i = 1; i < group.length; i++) {
       const cell = group[i];
+      let lastValidCell
       if (cell.tile == null) continue
       for (let j = i - 1; j >= 0 ; j--) {
         const moveToCell = group[j];
         if (!moveToCell.canAccept(cell.tile)) break
+        lastValidCell = moveToCell;
       }
       /* Check if we can move or merge a tile */
       if (lastValidCell != null) {
