@@ -11,6 +11,10 @@ export default class Tile {
     this.value = value;
   }
 
+  get value() {
+    return this.#value
+  }
+
   set value(v) {
     /* will change the value for the color style of the tile */
     this.#value = v;
