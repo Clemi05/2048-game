@@ -6,7 +6,7 @@ export default class Tile {
 
   constructor(tileContainer, value = Math.random() > 0.5 ? 2 : 4) {
     this.#tileElement = document.createElement("div");
-    this.#tileElement.classList.add("tile")
+    this.#tileElement.classList.add("tile");
     tileContainer.append(this.#tileElement)
     this.value = value;
   }
@@ -34,22 +34,26 @@ export default class Tile {
   set x(value) {
     /* Will set the value of the x in the CSS */
     this.#x = value;
-    this.#tileElement.style.setProperty("--x", value)
+    this.#tileElement.style.setProperty("--x", value);
   }
 
   set y(value) {
     /* Will set the value of the y in the CSS */
     this.#y = value;
-    this.#tileElement.style.setProperty("--y", value)
+    this.#tileElement.style.setProperty("--y", value);
   }
 
   remove() {
-    this.#tileElement.remove()
+    this.#tileElement.remove();
   }
 
-  waitForTransition() {
+  waitForTransition(animation = false) {
     return new Promise(resolve => {
-      this.#tileElement.addEventListener("transitionend", resolve, { once: true })
+      this.#tileElement.addEventListener(
+        animation ? "animationend" : "transitionend",
+        resolve,
+        { once: true }
+      )
     })
   }
 

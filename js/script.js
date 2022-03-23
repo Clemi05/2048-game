@@ -53,6 +53,13 @@ async function handleInput(event) {
   const newTile = new Tile(gameBoard);
   grid.randomEmptyCell().tile = newTile;
 
+  if (!canMoveUp() && !canMoveDown() && !canMoveLeft() && !canMoveRight()) {
+    newTile.waitForTransition(true).then(() => {
+      alert("Game Over! You lose.")
+    })
+    return
+  }
+
   setupInput();
 }
 
@@ -104,7 +111,31 @@ function slideTiles(cells) {
 
 }
 
+/* Code for the checking if the movements of the Tiles */
 
 function canMoveUp() {
+  return canMove(grid.cellsByColumn)
+}
 
+function canMoveDown() {
+  return canMove(grid.cellsByColumn.map(column => [...column].reverse()))
+}
+
+function canMoveLeft() {
+  return canMove(grid.cellsByRow)
+}
+
+function canMoveRight() {
+  return canMove(grid.cellsByRow.map(row => [...row].reverse()))
+}
+
+function canMove(cells) {
+  return cells.some(group => {
+    return group.some((cell, index) => {
+      if (index === 0) return false
+      if (cell.tile == null) return false
+      const moveToCell = group[index - 1];
+      return moveToCell.canAccept(cell.tile)
+    })
+  })
 }
