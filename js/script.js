@@ -109,7 +109,6 @@ function slideTiles(cells) {
       return promises
     })
   )
-
 }
 
 /* Code for the checking if the movements of the Tiles */

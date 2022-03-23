@@ -1,3 +1,4 @@
+/* CSS variables */
 const GRID_SIZE = 4;
 const CELL_SIZE = 20;
 const CELL_GAP = 2;
@@ -5,7 +6,6 @@ const CELL_GAP = 2;
 export default class Grid {
   /* private variable */
   #cells
-  /* #emptyCells */
 
   constructor(gridElement) {
     gridElement.style.setProperty("--grid-size", GRID_SIZE);
