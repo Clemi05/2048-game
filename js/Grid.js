@@ -5,6 +5,7 @@ const CELL_GAP = 2;
 export default class Grid {
   /* private variable */
   #cells
+  /* #emptyCells */
 
   constructor(gridElement) {
     gridElement.style.setProperty("--grid-size", GRID_SIZE);
@@ -18,6 +19,10 @@ export default class Grid {
       );
     });
     /* console.log(this.cells); */
+  }
+
+  get cells() {
+    return this.#cells
   }
 
   get cellsByRow() {
@@ -93,6 +98,13 @@ class Cell {
   canAccept(tile) {
     /* Check if can accept a tile */
     return (this.tile == null || (this.mergeTile == null && this.tile.value == tile.value))
+  }
+
+  mergeTile() {
+    if (this.tile == null || this.mergeTile == null) return
+    this.tile.value = this.tile.value + this.mergeTile.value;
+    this.mergeTile.remove() /* remove mergeTile from the DOM */
+    this.mergeTile = null; /* set mergeTile to null in the code */
   }
 
 }

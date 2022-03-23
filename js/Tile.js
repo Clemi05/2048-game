@@ -37,6 +37,10 @@ export default class Tile {
     /* Will set the value of the y in the CSS */
     this.#y = value;
     this.#tileElement.style.setProperty("--y", value)
-
   }
+
+  remove() {
+    this.#tileElement.remove()
+  }
+
 }

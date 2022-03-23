@@ -32,7 +32,7 @@ function handleInput(event) {
       return
   }
 
-
+  grid.cells.forEach(cell => cell.mergeTile())
 
   setupInput();
 }
